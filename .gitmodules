@@ -4,3 +4,24 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/command-t.git
+[submodule "bundle/javascript-libraries-syntax.vim"]
+	path = bundle/javascript-libraries-syntax.vim
+	url = git@github.com:othree/javascript-libraries-syntax.vim.git
+[submodule "bundle/--force"]
+	path = bundle/--force
+	url = git@github.com:adammfrank/vim-angular.git
+[submodule "bundle/vim-angular-adam"]
+	path = bundle/vim-angular-adam
+	url = git@github.com:adammfrank/vim-angular.git
+[submodule "bundle/youcompleteme"]
+	path = bundle/youcompleteme
+	url = https://github.com/valloric/youcompleteme
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "bundle/vim-workspace"]
+	path = bundle/vim-workspace
+	url = https://github.com/thaerkh/vim-workspace
+[submodule "bundle/vim-autotag"]
+	path = bundle/vim-autotag
+	url = git://github.com/craigemery/vim-autotag.git

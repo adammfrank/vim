@@ -1,6 +1,12 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -9,23 +15,13 @@ map <C-l> <C-W>l
 
 imap jj <Esc>
 
-"	#autoupdate ctags
-function! DelTagOfFile(file)
-  let fullpath = a:file
-  let cwd = getcwd()
-  let tagfilename = cwd . "/tags"
-  let f = substitute(fullpath, cwd . "/", "", "")
-  let f = escape(f, './')
-  let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
-  let resp = system(cmd)
-endfunction
+autocmd BufWritePost *.php, *.js, *.html call UpdateTags()
 
-function! UpdateTags()
-  let f = expand("%:p")
-  let cwd = getcwd()
-  let tagfilename = cwd . "/tags"
-  let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
-  call DelTagOfFile(f)
-  let resp = system(cmd)
-endfunction
-autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
+" Open NERDTree to current directory on c-o
+map <C-o> :NERDTreeToggle %<CR>
+
+
+set number
+
+nnoremap <leader>s :ToggleWorkspace<CR>
+
